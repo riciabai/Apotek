@@ -27,10 +27,8 @@
       </div>
       @include('bagian.navigasi')
       <div class="container">
-
             @yield('content')
         <hr>
-
     </div> <!-- /container -->
   
     </main>
