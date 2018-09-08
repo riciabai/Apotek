@@ -3,7 +3,7 @@
 @section('content')
 <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Silahkan masuk bos!</h5>
+          <h5 class="card-title">Ayok daftar bosq!</h5>
           <form method="POST" action="daftar">
               @csrf
               <div class="form-group">

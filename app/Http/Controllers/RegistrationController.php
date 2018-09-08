@@ -50,7 +50,7 @@ class RegistrationController extends Controller
         $user = new User();
         //isi data
         $user->name = $request->username;
-        $user->password = bcrypt($request->pass);
+        $user->password = $request->pass;
         $user->save();
         //jadikan pegawai
         $user->jadiPegawai($request);

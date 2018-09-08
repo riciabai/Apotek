@@ -13,7 +13,7 @@
                 <a class="nav-link" href="#">Tentang Kami</a>
             </li>
         </ul>
-        @if (!Auth::check())
+        @if (!auth()->check())
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item"><a href="{{url('masuk')}}" class="nav-link">Masuk</a></li>
                 <li class="nav-item"><a href="{{url('daftar')}}" class="nav-link">Mendaftar</a></li>

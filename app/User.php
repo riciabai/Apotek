@@ -32,12 +32,17 @@ class User extends Authenticatable
     public function jadiPegawai($request)
     {
         $this->pegawai()->create([
-            'nama' => $request->username,
-            'alamat' => $request->alamat,
-            'kelamin' => $request->kelamin,
-            'jabatan' => $request->jabatan
+            'nama' => $request['username'],
+            'alamat' => $request['alamat'],
+            'kelamin' => $request['kelamin'],
+            'jabatan' => $request['jabatan']
         ]);
     }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
 
     /**
      * The attributes that should be hidden for arrays.

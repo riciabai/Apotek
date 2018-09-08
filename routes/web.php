@@ -14,9 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('daftar', 'RegistrationController@index');
 
-Route::get('/daftar', 'RegistrationController@index');
+Route::post('daftar', 'RegistrationController@store');
 
-Route::post('/daftar', 'RegistrationController@store');
+Route::get('logout', "AuthController@destroy");
 
-Route::get('/logout', "AuthController@destroy");
+Route::get('masuk', 'AuthController@index');
+
+Route::post('masuk', 'AuthController@validasi');

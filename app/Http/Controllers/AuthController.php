@@ -12,4 +12,23 @@ class AuthController extends Controller
         auth()->logout();
         return redirect('/');
     }
+
+    public function index()
+    {
+        return view('auth.masuk');
+    }
+
+    public function validasi()
+    {
+        if(\Auth::attempt([
+            'name' => request('name'), 
+            'password' => request('password')
+            ]) == true)
+            {
+                return redirect('/');
+            }
+        return back()->withErrors([
+            'message' => 'Username atau password salah!'
+        ]);
+    }
 }
