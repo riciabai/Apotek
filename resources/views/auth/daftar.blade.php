@@ -36,6 +36,13 @@
               <div class="form-group">
                   <button type="submit" class="btn btn-success">Masuk Pak Eko!</button>
               </div>
+              @if($errors->any())
+                <div class="alert alert-danger">
+                  <ul>
+                  <li>{{$errors}}</li>
+                </ul>
+                </div>
+              @endif
           </form>
         </div>
 </div>

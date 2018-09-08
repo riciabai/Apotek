@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/daftar', 'RegistrationController@index');
+
+Route::post('/daftar', 'RegistrationController@store');
+
+Route::get('/logout', "AuthController@destroy");
