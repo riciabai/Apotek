@@ -1,6 +1,8 @@
 @extends('tata-letak.master')
 
 @section('content')
+<div class="row">
+  <div class="col-5">
 <div class="card">
         <div class="card-body">
           <h5 class="card-title">Silahkan masuk bos!</h5>
@@ -17,16 +19,19 @@
               <div class="form-group">
                   <button type="submit" class="btn btn-success">Masuk Pak Eko!</button>
               </div>
-              @if($errors->any())
-                <div class="alert alert-danger">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                      <li>{{$error}}</li>
-                      @endforeach
-                </ul>
-                </div>
-              @endif
+              @include('bagian.error')
           </form>
         </div>
+      </div>
+      </div>
+      <div class="col-7">
+        <div class="jumbotron bg-success">
+          <div class="container">
+            <h3 class="display-4">
+              Mat Datang Lagi BOSQ
+            </h3>
+          </div>
+        </div>
+      </div>
 </div>
 @endsection
