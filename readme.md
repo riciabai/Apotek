@@ -1,5 +1,9 @@
 ## What's This???
-This is a repository contain code for 'apotek' made with [Laravel](https://laravel.com)
+Ini adalah repo Aplikasi Apotek dibuat dengan [Laravel](https://laravel.com)
+
+##Warning
+
+Aplikasi masih dalam tahap pengembangan, Siapapun boleh berkontribusi
 
 ## License
 
