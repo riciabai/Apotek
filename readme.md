@@ -1,7 +1,7 @@
 ## What's This???
 Ini adalah repo Aplikasi Apotek dibuat dengan [Laravel](https://laravel.com)
 
-##Warning
+## Warning
 
 Aplikasi masih dalam tahap pengembangan, Siapapun boleh berkontribusi
 
