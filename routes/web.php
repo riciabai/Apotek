@@ -25,3 +25,5 @@ Route::get('masuk', 'AuthController@index')->middleware('guest')->name('login');
 Route::post('masuk', 'AuthController@validasi');
 
 Route::get('home','PegawaiController@index')->middleware('auth');
+
+Route::get('obat', 'ObatController@index');
