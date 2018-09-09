@@ -5,7 +5,7 @@
 @endsection
 
 @section('form')    
-<form method="POST" action="masuk">
+<form method="POST" action="obat">
 @csrf
 <div class="form-group">
   <label for="nama" class="label">Nama Obat</label>
