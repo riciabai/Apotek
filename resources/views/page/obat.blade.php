@@ -49,6 +49,7 @@
       <th>Jenis Obat</th>
       <th>Stok Obat</th>
       <th>Harga</th>
+      <th colspan="2" class="text-center">Opsi</th>
 </tr>
 @foreach ($obat as $data)
     <tr>
@@ -56,6 +57,17 @@
     <td>{{$data->jenis}}</td>
     <td>{{$data->stok}}</td>
     <td>{{$data->harga}}</td>
+    <td><a 
+        href="obat/edit/{{$data->id}}"
+        class="btn btn-block btn-outline-primary">
+        Edit
+        </a>
+    </td>
+    <td><a 
+        href="obat/hapus/{{$data->id}}"
+        class="btn btn-block btn-outline-danger"
+        >Hapus</a>
+    </td>
     </tr>
 @endforeach
 @endsection
