@@ -2,7 +2,7 @@
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-        <a class="nav-link" href="{{url('dashboard')}}">
+        <a class="nav-link" href="{{url('home')}}">
             <span data-feather="home"></span>
             Dashboard 
           </a>

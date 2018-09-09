@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
+
 Route::get('daftar', 'RegistrationController@index')->middleware('guest');
 
 Route::post('daftar', 'RegistrationController@store');
@@ -27,6 +28,8 @@ Route::post('masuk', 'AuthController@validasi');
 Route::get('home','PegawaiController@index')->middleware('auth');
 
 Route::get('obat', 'ObatController@index');
+
+Route::post('obat', 'ObatController@store');
 
 Route::get('supplier', 'SupplierController@index');
 
