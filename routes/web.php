@@ -13,13 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
-Route::get('daftar', 'RegistrationController@index');
+})->middleware('guest');
+Route::get('daftar', 'RegistrationController@index')->middleware('guest');
 
 Route::post('daftar', 'RegistrationController@store');
 
-Route::get('logout', "AuthController@destroy");
+Route::get('logout', "AuthController@destroy")->middleware('auth');
 
-Route::get('masuk', 'AuthController@index');
+Route::get('masuk', 'AuthController@index')->middleware('guest')->name('login');
 
 Route::post('masuk', 'AuthController@validasi');
+
+Route::get('home','PegawaiController@index')->middleware('auth');

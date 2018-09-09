@@ -57,7 +57,7 @@ class RegistrationController extends Controller
         //login-kan usernya
         auth()->login($user);
         //redirect ke laman utama
-        return redirect('/');
+        return redirect('/home');
     }
 
     /**

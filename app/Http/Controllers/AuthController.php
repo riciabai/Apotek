@@ -25,7 +25,7 @@ class AuthController extends Controller
             'password' => request('password')
             ]) == true)
             {
-                return redirect('/');
+                return redirect('/home');
             }
         return back()->withErrors([
             'message' => 'Username atau password salah!'
