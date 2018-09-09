@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,7 +25,7 @@ Route::get('masuk', 'AuthController@index')->middleware('guest')->name('login');
 
 Route::post('masuk', 'AuthController@validasi');
 
-Route::get('home','PegawaiController@index')->middleware('auth');
+Route::get('home', 'PegawaiController@index')->middleware('auth');
 
 Route::get('obat', 'ObatController@index');
 

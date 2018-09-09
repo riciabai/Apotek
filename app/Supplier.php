@@ -2,16 +2,16 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 use App\Obat;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+
 class Supplier extends Model
 {
     //
 
     protected $fillable = [
-        'nama','alamat'
+        'nama', 'alamat',
     ];
 
     public function obat()
@@ -19,12 +19,13 @@ class Supplier extends Model
         return $this->hasMany(Obat::class);
     }
 
-    public function obatBaru(Request $req){
+    public function obatBaru(Request $req)
+    {
         $this->obat()->create([
             'nama' => $req->nama,
             'jenis' => $req->jenis,
             'stok' => $req->stok,
-            'harga' => $req->harga
+            'harga' => $req->harga,
         ]);
     }
 }

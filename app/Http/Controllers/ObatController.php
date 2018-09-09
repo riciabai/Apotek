@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Obat;
 use App\Supplier;
+use Illuminate\Http\Request;
 
 class ObatController extends Controller
 {
@@ -19,18 +18,18 @@ class ObatController extends Controller
     {
         $obat = Obat::all();
         $supplier = Supplier::all();
-        return view('page.obat', compact('obat','supplier'));
+        return view('page.obat', compact('obat', 'supplier'));
     }
 
     public function store(Request $req)
     {
         //validasi
-        $this->validate($req,[
+        $this->validate($req, [
             'nama' => 'required',
             'jenis' => 'required',
             'stok' => 'required',
             'harga' => 'required',
-            'supplier' => 'required'
+            'supplier' => 'required',
         ]);
         // ambil instance supplier yang manyamai
         $supply = Supplier::find($req->supplier);
@@ -39,14 +38,14 @@ class ObatController extends Controller
 
         //kembali
 
-        return back()->with('success','Berhasil menambahkan obat');
+        return back()->with('success', 'Berhasil menambahkan obat');
     }
 
     public function edit(Obat $obat)
     {
         $supply = Supplier::all(['nama', 'alamat']);
 
-        return view('page.obat-edit',compact('supply','obat'));
+        return view('page.obat-edit', compact('supply', 'obat'));
     }
 
     public function destroy(Obat $obat)

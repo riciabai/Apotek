@@ -1,15 +1,16 @@
 <?php
 
 namespace App;
-use Illuminate\Database\Eloquent\Model;
+
 use App\User;
+use Illuminate\Database\Eloquent\Model;
+
 class pegawai extends Model
 {
     //
     protected $fillable = [
-        'nama', 'alamat','kelamin','jabatan'
+        'nama', 'alamat', 'kelamin', 'jabatan',
     ];
-
 
     /**
      * Relasi dengan user

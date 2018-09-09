@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePegawaisTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreatePegawaisTable extends Migration
             $table->integer('user_id');
             $table->string('nama');
             $table->string('alamat');
-            $table->enum('kelamin', ['pria','wanita']);
+            $table->enum('kelamin', ['pria', 'wanita']);
             $table->string('jabatan');
             $table->timestamps();
         });

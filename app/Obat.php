@@ -2,14 +2,14 @@
 
 namespace App;
 
+use App\Supplier;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Supplier;
 class Obat extends Model
 {
     //
     protected $fillable = [
-        'nama','jenis','stok','harga'
+        'nama', 'jenis', 'stok', 'harga',
     ];
 
     public function supplier()
