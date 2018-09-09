@@ -27,12 +27,20 @@
   <label for="Supplier" class="label">Supplier Obat</label>
   <select name="supplier" id="Supplier" class="form-control">
       <option value="#" selected>Pilih Supplier</option>
+      @foreach ($supplier as $data)
+  <option value="{{$data->id}}">{{ $data->nama }}</option>
+      @endforeach
   </select>
 </div>
 <div class="form-group">
         <button type="submit" class="btn btn-success">OKE</button>
     </div>
 </form>
+@isset($success)
+<div class="alert alert-success">
+    {{$success}}
+</div>
+@endisset
 @endsection
 
 @section('tabel')    
@@ -42,4 +50,12 @@
       <th>Stok Obat</th>
       <th>Harga</th>
 </tr>
+@foreach ($obat as $data)
+    <tr>
+    <td>{{$data->nama}}</td>
+    <td>{{$data->jenis}}</td>
+    <td>{{$data->stok}}</td>
+    <td>{{$data->harga}}</td>
+    </tr>
+@endforeach
 @endsection
