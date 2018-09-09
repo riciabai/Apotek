@@ -31,6 +31,10 @@ Route::get('obat', 'ObatController@index');
 
 Route::post('obat', 'ObatController@store');
 
+Route::get('obat/edit/{obat}', 'ObatController@edit');
+
+Route::get('obat/hapus/{obat}', 'ObatController@destroy');
+
 Route::get('supplier', 'SupplierController@index');
 
 Route::post('supplier', 'SupplierController@store');

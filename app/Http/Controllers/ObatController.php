@@ -38,6 +38,19 @@ class ObatController extends Controller
         $supply->obatBaru($req);
 
         //kembali
-        return back()->with(['success' => 'Berhasil menambahkan obat']);
+        return back()->with('success','Berhasil menambahkan obat');
+    }
+
+    public function edit(Obat $obat)
+    {
+        $supply = Supplier::all(['nama', 'alamat']);
+
+        return view('page.obat-edit',compact('supply','obat'));
+    }
+
+    public function destroy(Obat $obat)
+    {
+        $obat->delete();
+        return back();
     }
 }
