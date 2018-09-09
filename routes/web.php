@@ -29,3 +29,5 @@ Route::get('home','PegawaiController@index')->middleware('auth');
 Route::get('obat', 'ObatController@index');
 
 Route::get('supplier', 'SupplierController@index');
+
+Route::post('supplier', 'SupplierController@store');
