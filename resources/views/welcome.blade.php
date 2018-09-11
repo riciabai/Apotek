@@ -5,23 +5,7 @@
 <div class="row">
   @foreach ($obat as $item)
   <div class="col-md-4">
-      <h2>{{ $item->nama }}</h2>
-      <div class="row">
-      <div class="col-6">
-        <strong>JENIS</strong> :{{ $item->jenis }}
-      </div>
-      <div class="col-6">
-        <strong>STOK</strong> :{{ $item->stok }}
-      </div>
-      </div>
-      <div class="row">
-        <div class="col-6 ">
-          <strong>HARGA</strong> :{{ $item->harga }}
-        </div>
-        <div class="col-6 ">
-        <a href="#" class="btn btn-block btn-primary"> Beli </a>
-        </div>
-      </div>
+      @include('bagian.obat')
     </div>
   @endforeach
 </div>
