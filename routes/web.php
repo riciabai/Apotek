@@ -15,17 +15,21 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
 
-Route::get('daftar', 'RegistrationController@index')->middleware('guest');
+Route::get('daftar', 'RegistrationController@index');
 
 Route::post('daftar', 'RegistrationController@store');
 
-Route::get('logout', "AuthController@destroy")->middleware('auth');
+Route::get('logout', "AuthController@destroy");
 
-Route::get('masuk', 'AuthController@index')->middleware('guest')->name('login');
+Route::get('masuk', 'AuthController@index')->name('login');
 
 Route::post('masuk', 'AuthController@validasi');
 
-Route::get('home', 'PegawaiController@index')->middleware('auth');
+Route::get('home','PegawaiController@index')->name('home');
+
+/*--------------------------------------------------------------
+Rute obat ex : localhost:8000/obat
+--------------------------------------------------------------*/
 
 Route::get('obat', 'ObatController@index');
 
@@ -33,8 +37,13 @@ Route::post('obat', 'ObatController@store');
 
 Route::get('obat/edit/{obat}', 'ObatController@edit');
 
+Route::post('obat/edit', 'ObatController@change');
+
 Route::get('obat/hapus/{obat}', 'ObatController@destroy');
 
+/*
+Rute Supplier ex : localhost:8000/supplier
+*/
 Route::get('supplier', 'SupplierController@index');
 
 Route::post('supplier', 'SupplierController@store');

@@ -3,8 +3,8 @@
 namespace App;
 
 use App\Supplier;
-use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Http\Request;
+use App\Supplier;
 class Obat extends Model
 {
     //
