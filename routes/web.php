@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('welcome', compact('obat'));
 })->middleware('guest');
 
+Route::get('/about', function() {
+    return view('about');
+})->middleware('guest')->name('about');
+
 Route::get('daftar', 'RegistrationController@index');
 
 Route::post('daftar', 'RegistrationController@store');
