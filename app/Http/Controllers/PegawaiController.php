@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Obat;
+use App\Supplier;
+
+
 class PegawaiController extends Controller
 {
     public function __construct()
@@ -11,6 +15,8 @@ class PegawaiController extends Controller
     //
     public function index()
     {
-        return view('dashboard');
+        $obat = Obat::all();
+        $supply = Supplier::all();
+        return view('dashboard', compact('obat','supply'));
     }
 }
