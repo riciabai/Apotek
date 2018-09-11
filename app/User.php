@@ -22,13 +22,19 @@ class User extends Authenticatable
 
     /**
      * Relasi antaran user dengan pegawai
+     * @return pegawai 
      */
-
     public function pegawai()
     {
         return $this->hasOne(pegawai::class);
     }
 
+    /**
+     * jadikan user sebagai pegawai
+     * 
+     * @param Request $request
+     * @return pegawai
+     */
     public function jadiPegawai($request)
     {
         $this->pegawai()->create([

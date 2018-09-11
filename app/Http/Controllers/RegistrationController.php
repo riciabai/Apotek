@@ -10,6 +10,15 @@ use App\pegawai;
 class RegistrationController extends Controller
 {
     /**
+     * Constructor for this class
+     * 
+     */
+    public function __construct()
+    {
+        # code...
+        $this->middleware('guest');
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -57,7 +66,7 @@ class RegistrationController extends Controller
         //login-kan usernya
         auth()->login($user);
         //redirect ke laman utama
-        return redirect('/home');
+        return redirect()->route('home');
     }
 
     /**
