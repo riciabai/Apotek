@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Dashboard Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{url ('css/app.css')}}" rel="stylesheet">
