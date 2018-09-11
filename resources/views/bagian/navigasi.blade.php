@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="tersembunyi">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Obat</a>
+                <a class="nav-link" href=" {{ url('page/obat') }}">Obat</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Tentang Kami</a>

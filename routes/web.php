@@ -31,6 +31,7 @@ Route::get('home','PegawaiController@index')->name('home');
 /*--------------------------------------------------------------
 Rute obat ex : localhost:8000/obat
 --------------------------------------------------------------*/
+Route::get('page/obat','ObatController@view');
 
 Route::get('obat', 'ObatController@index');
 

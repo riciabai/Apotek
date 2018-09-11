@@ -12,9 +12,15 @@ class ObatController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('view');
     }
 
+    public function view()
+    {
+        # code...
+        $obat = Obat::all();
+        return view('page.obat-prev',compact('obat'));
+    }
     public function index()
     {
         $obat = Obat::all();
