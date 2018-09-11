@@ -4,7 +4,7 @@ namespace App;
 
 use App\Supplier;
 use Illuminate\Http\Request;
-use App\Supplier;
+use Illuminate\Database\Eloquent\Model;
 class Obat extends Model
 {
     //

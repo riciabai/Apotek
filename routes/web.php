@@ -12,7 +12,8 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    $obat = App\Obat::All()->take(3);
+    return view('welcome', compact('obat'));
 })->middleware('guest');
 
 Route::get('daftar', 'RegistrationController@index');
