@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-
 use App\Obat;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+
 class Supplier extends Model
 {
     //
@@ -13,7 +13,7 @@ class Supplier extends Model
      * field yang bisa mass assignment
      */
     protected $fillable = [
-        'nama','alamat'
+        'nama', 'alamat',
     ];
 
     /**
@@ -33,7 +33,7 @@ class Supplier extends Model
             'nama' => $req->nama,
             'jenis' => $req->jenis,
             'stok' => $req->stok,
-            'harga' => $req->harga
+            'harga' => $req->harga,
         ]);
     }
 }

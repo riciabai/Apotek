@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\User;
-use App\pegawai;
+use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
@@ -53,7 +51,7 @@ class RegistrationController extends Controller
             'pass' => 'required|confirmed',
             'alamat' => 'required',
             'kelamin' => 'required',
-            'jabatan' => 'required'
+            'jabatan' => 'required',
         ]);
         //buat instansi user baru
         $user = new User();

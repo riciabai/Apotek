@@ -24,15 +24,14 @@ class AuthController extends Controller
 
     public function validasi()
     {
-        if(\Auth::attempt([
-            'name' => request('name'), 
-            'password' => request('password')
-            ]) == true)
-            {
-                return redirect('/home');
-            }
+        if (\Auth::attempt([
+            'name' => request('name'),
+            'password' => request('password'),
+        ]) == true) {
+            return redirect('/home');
+        }
         return back()->withErrors([
-            'message' => 'Username atau password salah!'
+            'message' => 'Username atau password salah!',
         ]);
     }
 }
