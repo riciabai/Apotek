@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Obat;
 use App\Supplier;
+use Illuminate\Http\Request;
+use App\Http\Requests\ObatV;
 
 class ObatController extends Controller
 {
@@ -19,33 +19,38 @@ class ObatController extends Controller
     {
         $obat = Obat::all();
         $supplier = Supplier::all();
-        return view('page.obat', compact('obat','supplier'));
+        return view('page.obat', compact('obat', 'supplier'));
     }
 
-    public function store(Request $req)
+    public function store(ObatV $req)
     {
-        //validasi
-        $this->validate($req,[
-            'nama' => 'required',
-            'jenis' => 'required',
-            'stok' => 'required',
-            'harga' => 'required',
-            'supplier' => 'required'
-        ]);
         // ambil instance supplier yang manyamai
         $supply = Supplier::find($req->supplier);
         //tambahkan obat baru berdasarkan request tadi
         $supply->obatBaru($req);
 
         //kembali
-        return back()->with('success','Berhasil menambahkan obat');
+        return back()->with('success', 'Berhasil menambahkan obat');
+    }
+
+    public function change(ObatV $r)
+    {
+        # code...
+       Obat::find($r->id)->update([
+           'nama' => $r->nama,
+           'jenis' => $r->jenis,
+           'stok' => $r->stok,
+           'harga' => $r->harga,
+           'supplier_id' => $r->supplier
+       ]);
+       return redirect('/obat');
     }
 
     public function edit(Obat $obat)
     {
-        $supply = Supplier::all(['nama', 'alamat']);
+        $supply = Supplier::all()->where('id', '!=', $obat->supplier->id);
 
-        return view('page.obat-edit',compact('supply','obat'));
+        return view('page.obat-edit', compact('supply', 'obat'));
     }
 
     public function destroy(Obat $obat)

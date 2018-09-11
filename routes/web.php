@@ -35,13 +35,11 @@ Route::get('obat', 'ObatController@index');
 
 Route::post('obat', 'ObatController@store');
 
-Route::prefix('obat',function()
-{
-    # code...
-    Route::get('edit/{obat}', 'ObatController@edit');
-    
-    Route::get('hapus/{obat}', 'ObatController@destroy');
-});
+Route::get('obat/edit/{obat}', 'ObatController@edit');
+
+Route::post('obat/edit', 'ObatController@change');
+
+Route::get('obat/hapus/{obat}', 'ObatController@destroy');
 
 /*
 Rute Supplier ex : localhost:8000/supplier
